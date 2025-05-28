@@ -17,6 +17,9 @@ importers:
       '@fontsource-variable/source-code-pro':
         specifier: ^5.0.19
         version: 5.2.5
+      '@fontsource/special-elite':
+        specifier: ^5.2.5
+        version: 5.2.5
       astro:
         specifier: ^4.12.2
         version: 4.16.18(rollup@4.41.1)(typescript@5.8.3)
@@ -328,6 +331,9 @@ packages:
 
   '@fontsource-variable/source-code-pro@5.2.5':
     resolution: {integrity: sha512-Mi0+uddn7+wE2hytXVG4RN7TJ8aLU6SU/4GVxBRgkaGsI/WQ3ir3uSzbUGBmG7EnEGQkenr21eVmDHdba2RBKA==}
+
+  '@fontsource/special-elite@5.2.5':
+    resolution: {integrity: sha512-QsRlePOb2e6JEwuqZMv76TXiV0nkiCNgiy8LmOTAnhQ2ni5eC1BtTpvsyKeVQ3PZr7ib1N6TsIqAuNc+V9gILQ==}
 
   '@img/sharp-darwin-arm64@0.33.5':
     resolution: {integrity: sha512-UT4p+iz/2H4twwAoLCqfA9UH5pI6DggwKEGuaPy7nCVQ8ZsiY5PIcrRvD1DzuY3qYL07NtIQcWnBSY/heikIFQ==}
@@ -2428,6 +2434,8 @@ snapshots:
     optional: true
 
   '@fontsource-variable/source-code-pro@5.2.5': {}
+
+  '@fontsource/special-elite@5.2.5': {}
 
   '@img/sharp-darwin-arm64@0.33.5':
     optionalDependencies:

@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import '@fontsource-variable/source-code-pro';
+import '@fontsource/special-elite';
 interface Props {
     title: string;
 	description: string;
@@ -36,6 +37,12 @@ const { description, title } = Astro.props;
         font-family: 'Source Code Pro Variable', monospace;
         scroll-behavior: smooth;
         
+    }
+    h1, h2, h3, h4{
+        font-family: 'Special Elite', system-ui;
+    }
+    .typewriter{
+        font-family: 'Special Elite', system-ui;
     }
     body {
 		
