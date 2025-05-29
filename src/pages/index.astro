@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Section from '../components/Section.astro';
+import Submission_form from '../components/Submission_form.astro';
 import Footer from '../components/Footer.astro'
 ---
 
@@ -10,14 +11,14 @@ description="Zondag 6 juli is het weer zover: ons eindeseizoensfeest! En dit jaa
 		<Section>
 			<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-5 pb-6 lg:pb-10">
 			Boeven vs. Jagers<br/> Durf Jij het Aan? </h1>
-			<p class="text-xl lg:text-2xl opacity-80 text-pretty max-w-{700px}"">Zondag 6 juli is het weer zover: ons eindeseizoensfeest! En dit jaar doen we iets gaafs: we gaan buiten het spel Hunting Game spelen!</p>
-			<p class="mt-10 text-xl lg:text-2xl opacity-80 text-pretty max-w-{700px}">
+			<p class="text-xl opacity-80 text-pretty max-w-{700px}">Zondag 6 juli is het weer zover: ons eindeseizoensfeest! En dit jaar doen we iets gaafs: we gaan buiten het spel Hunting Game spelen!</p>
+			<p class="mt-10 text-xl opacity-80 text-pretty max-w-{700px}">
 				<span class="text-blue-300 typewriter">Wanneer?</span> Zondag 6 juli 2025
 			</p>
-			<p class="text-xl lg:text-2xl opacity-80 text-pretty max-w-{700px}">
+			<p class="text-xl opacity-80 text-pretty max-w-{700px}">
 				<span class="text-blue-300 typewriter">Waar?</span> Judovereniging De Uitkomst, Sportlaan 21, Anna Paulowna
 			</p>
-			<p class="text-xl lg:text-2xl opacity-80 text-pretty max-w-{700px}">
+			<p class="text-xl opacity-80 text-pretty max-w-{700px}">
 				<span class="text-blue-300 typewriter">Hoe laat?</span> 13:00 tot 16:00 uur + afsluitende BBQ!
 			</p>
 		
@@ -56,9 +57,8 @@ description="Zondag 6 juli is het weer zover: ons eindeseizoensfeest! En dit jaa
 		</Section>
 		<Section id="aanmelden">
 			<h2 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-5 pb-6 lg:pb-10">Aanmelden</h2>
-			<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdvYw9t3id7njCIW2tHU2o-pua-YxLGWFqe1hk8jkurSu3sjw/viewform?embedded=true" width="640" height="554" frameborder="0" marginheight="0" marginwidth="0">Laden…</iframe>
+			<Submission_form />
 		</Section>
 		<Footer/>
 	</main>
-	
 </Layout>
