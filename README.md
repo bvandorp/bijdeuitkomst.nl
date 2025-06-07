@@ -1,5 +1,6 @@
 # Portfolio
 
-¡Bienvenido a mi portafolio! Este proyecto muestra mis habilidades y proyectos en el desarrollo web.
+Bijdeuitkomst.nl
 
-![Portfolio](https://github.com/user-attachments/assets/a36bbbc1-83ac-4176-9552-367c5753815c)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/76d259fd-914a-4585-b472-180cb6026b06/deploy-status)](https://app.netlify.com/projects/bijdeuitkomstnl/deploys)
+
