@@ -30,6 +30,10 @@ const { description, title } = Astro.props;
 </html>
 
 <style is:global>
+    @import "flowbite/src/themes/default";
+    @plugin "flowbite/plugin";
+    @source "../../node_modules/flowbite";
+
     :root {
         color-scheme: dark;
     }
