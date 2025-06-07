@@ -3,6 +3,8 @@ import SelectPersons from '../components/select_persons.astro'
 import InputPlayer from "../components/input_player.astro"
 ---
 <form name="Aanmeldformulier" class="w-full" action="/bedankt" method="post" netlify>
+    <input type="hidden" name="subject" 
+  value="Nieuwe aanmelding Judo (%{submissionId})" />
   <!-- Persoonsgegevens -->
   <div class="flex flex-wrap -mx-3 mb-6">
     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
