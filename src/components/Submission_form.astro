@@ -1,178 +1,89 @@
 ---
-import SelectPersons from '../components/select_persons.astro'
-import InputPlayer from "../components/input_player.astro"
 ---
 
-<form name="Aanmeldformulier" class="w-full" action="/bedankt" method="post" netlify>
-    <input type="hidden" name="subject" 
-  value="Nieuwe aanmelding Judo (%{submissionId})" />
-  <!-- Persoonsgegevens -->
-  <div class="flex flex-wrap -mx-3 mb-6">
-    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-      <label class="block tracking-wide text-white-700 text-l mb-2" for="grid-first-name">
-        Jouw naam
-      </label>
-      <input required class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" name="naam" placeholder="Naam">
-    </div>
-    <div class="w-full md:w-1/2 px-3">
-      <label class="block tracking-wide text-white-700 text-l mb-2" for="grid-last-name">
-        Jouw e-mailadres
-      </label>
-      <input required class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="email" name="email" placeholder="jouw@emailadres.nl">
-    </div>
-  </div>
+<form name="smokkel-aanmelding" class="w-full space-y-6" action="/bedankt" method="post" data-netlify="true">
+    <input type="hidden" name="subject" value="Nieuwe aanmelding Operation Black Belt (%{submissionId})" />
 
-  <!-- Keuzes: spel en BBQ -->
-  <div class="flex flex-wrap -mx-3 mb-6">
-    <!-- Spel -->
-    <div class="w-1/2 px-3">
-      Wil je mensen aanmelden voor het spel?
-      <div class="flex items-center mt-4">
-        <input checked id="spel_nee" type="radio" value="nee" name="meedoen_spel" class="w-4 h-4 text-white">
-        <label for="spel_nee" class="ms-2 text-sm font-medium mr-5">Nee</label>
-
-        <input id="spel_ja" type="radio" value="ja" name="meedoen_spel" class="w-4 h-4 text-white">
-        <label for="spel_ja" class="ms-2 text-sm font-medium mr-5">Ja</label>
-      </div>
+    <!-- Contactgegevens -->
+    <div class="terminal-card p-5 rounded">
+        <p class="text-t-text-dim text-xs tracking-widest mb-4">&gt; CONTACTGEGEVENS_</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+                <label class="block text-t-green text-xs tracking-widest mb-2" for="naam">NAAM</label>
+                <input required
+                    class="w-full bg-t-bg border border-t-border text-t-green placeholder:text-t-text-dim rounded px-4 py-2.5 text-sm focus:outline-none focus:border-t-green transition-colors"
+                    id="naam" type="text" name="naam" placeholder="Voor- en achternaam" />
+            </div>
+            <div>
+                <label class="block text-t-green text-xs tracking-widest mb-2" for="email">E-MAIL</label>
+                <input required
+                    class="w-full bg-t-bg border border-t-border text-t-green placeholder:text-t-text-dim rounded px-4 py-2.5 text-sm focus:outline-none focus:border-t-green transition-colors"
+                    id="email" type="email" name="email" placeholder="naam@example.nl" />
+            </div>
+        </div>
     </div>
 
-    <!-- BBQ -->
-    <div class="w-1/2 px-3">
-      Wil je je aanmelden voor de BBQ?
-      <div class="flex items-center mt-4">
-        <input checked id="bbq_nee" type="radio" value="nee" name="meedoen_bbq" class="w-4 h-4 text-white">
-        <label for="bbq_nee" class="ms-2 text-sm font-medium mr-5">Nee</label>
-
-        <input id="bbq_ja" type="radio" value="ja" name="meedoen_bbq" class="w-4 h-4 text-white">
-        <label for="bbq_ja" class="ms-2 text-sm font-medium mr-5">Ja</label>
-      </div>
-    </div>
-  </div>
-
-  <!-- Spelgedeelte -->
-  <div id="game_aanmelden" class="flex flex-wrap -mx-3 mb-6 hidden">
-    <div class="w-3/4 px-3 mb-6 md:mb-0">
-      <label class="block uppercase tracking-wide text-white-700 text-l font-bold mb-2">
-        Voornaam speler
-      </label>
-    </div>
-    <div class="w-1/4 px-3">
-      <label class="block uppercase tracking-wide text-white-700 text-l font-bold mb-2">
-        Leeftijd
-      </label>
+    <!-- Spelers -->
+    <div class="terminal-card p-5 rounded">
+        <p class="text-t-text-dim text-xs tracking-widest mb-4">&gt; SPELERSNAMEN_</p>
+        <p class="text-t-text text-xs mb-4">Voer hieronder de namen in van alle deelnemers in jouw groep (max. 6)</p>
+        <div class="space-y-3">
+            {Array.from({length: 6}, (_, i) => (
+                <div class="grid grid-cols-4 gap-3 items-center">
+                    <div class="col-span-3">
+                        <input
+                            class="w-full bg-t-bg border border-t-border text-t-green placeholder:text-t-text-dim rounded px-4 py-2 text-sm focus:outline-none focus:border-t-green transition-colors"
+                            type="text" name={`speler_${i + 1}`} placeholder={`Speler ${i + 1}${i === 0 ? ' (verplicht)' : ''}`}
+                            {...(i === 0 ? {required: true} : {})} />
+                    </div>
+                    <div>
+                        <input
+                            class="w-full bg-t-bg border border-t-border text-t-green placeholder:text-t-text-dim rounded px-4 py-2 text-sm focus:outline-none focus:border-t-green transition-colors"
+                            type="number" name={`leeftijd_${i + 1}`} placeholder="Leeftijd" min="5" max="99" />
+                    </div>
+                </div>
+            ))}
+        </div>
     </div>
 
-    <InputPlayer name_input="player_1" age_input="age_1"/>
-    <InputPlayer name_input="player_2" age_input="age_2"/>
-    <InputPlayer name_input="player_3" age_input="age_3"/>
-    <InputPlayer name_input="player_4" age_input="age_4"/>
-    <InputPlayer name_input="player_5" age_input="age_5"/>
-    <InputPlayer name_input="player_6" age_input="age_6"/>
-  </div>
-
-  <!-- BBQ-gedeelte -->
-  <div id="bbq_aanmelden" class="flex flex-wrap -mx-3 mb-6 hidden">
-    
-    <div class="w-1/2 px-6 flex flex-wrap justify-center">
-      BBQ vlees
-      &euro; 11,50
-      <SelectPersons name="bbq_vlees"/>
+    <!-- Teamvoorkeur -->
+    <div class="terminal-card p-5 rounded">
+        <p class="text-t-text-dim text-xs tracking-widest mb-4">&gt; TEAMVOORKEUR_</p>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <label class="flex items-center gap-3 p-3 border border-t-border rounded cursor-pointer hover:border-t-green hover:bg-t-green-muted transition-all group">
+                <input type="radio" name="team_voorkeur" value="smokkelteam" class="accent-t-green" />
+                <div>
+                    <p class="text-t-green text-sm font-bold group-hover:glow-green">SMOKKELTEAM</p>
+                    <p class="text-t-text-dim text-xs">Smokkelen & ontwijken</p>
+                </div>
+            </label>
+            <label class="flex items-center gap-3 p-3 border border-t-border rounded cursor-pointer hover:border-t-red hover:bg-red-950/20 transition-all group">
+                <input type="radio" name="team_voorkeur" value="politie" class="accent-t-red" />
+                <div>
+                    <p class="text-t-red text-sm font-bold">POLITIE</p>
+                    <p class="text-t-text-dim text-xs">Patrouilleren & vangen</p>
+                </div>
+            </label>
+            <label class="flex items-center gap-3 p-3 border border-t-border rounded cursor-pointer hover:border-t-amber hover:bg-yellow-950/20 transition-all group">
+                <input type="radio" name="team_voorkeur" value="geen_voorkeur" class="accent-t-amber" checked />
+                <div>
+                    <p class="text-t-amber text-sm font-bold">GEEN VOORKEUR</p>
+                    <p class="text-t-text-dim text-xs">Spelleider bepaalt</p>
+                </div>
+            </label>
+        </div>
     </div>
 
-    <div class="w-1/2 px-6 flex flex-wrap justify-center">
-      BBQ vega
-      &euro; 7,95
-      <SelectPersons name="bbq_vega"/>
-    </div>
-     <div class="mt-4 w-1/2 px-6 flex flex-wrap justify-center">
-      Kindermenu BBQ
-      &euro; 5,50
-      <SelectPersons name="bbq_kind"/>
+    <!-- Opmerkingen -->
+    <div class="terminal-card p-5 rounded">
+        <p class="text-t-text-dim text-xs tracking-widest mb-4">&gt; AANVULLENDE_INFO_</p>
+        <textarea
+            class="w-full bg-t-bg border border-t-border text-t-green placeholder:text-t-text-dim rounded px-4 py-2.5 text-sm focus:outline-none focus:border-t-green transition-colors resize-none"
+            name="opmerkingen" rows="3" placeholder="Bijzonderheden, allergieën, vragen..."></textarea>
     </div>
 
-    <div class="mt-4 w-1/2 px-6 flex flex-wrap justify-center">
-      Pannenkoeken 
-      gratis
-      <SelectPersons name="pannenkoeken"/>
-    </div>
-   
-  </div>
-
-  <div class="flex flex-wrap -mx-3 mb-6">
-    <label for="message" class="block mb-2 text-sm font-medium text-white">Vragen / opmerkingen</label>
-<textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Zijn er nog vragen en/of opmerkingen?"></textarea>
-  </div>
-
-  <!-- Submit -->
-  <div class="flex flex-wrap justify-center -mx-3 mb-6">
-    <input class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit" name="submit" value="Aanmelden">
-  </div>
+    <button type="submit"
+        class="w-full bg-t-green text-t-bg font-bold py-3 px-6 rounded text-sm tracking-widest hover:bg-t-green-dim transition-colors glow-green">
+        &gt; AANMELDING VERZENDEN_
+    </button>
 </form>
-
-<!-- Javascript -->
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const spelRadios = document.querySelectorAll('input[name="meedoen_spel"]');
-    const bbqRadios = document.querySelectorAll('input[name="meedoen_bbq"]');
-    const gameDiv = document.getElementById('game_aanmelden');
-    const bbqDiv = document.getElementById('bbq_aanmelden');
-    const form = document.querySelector('form');
-
-    function toggleVisibility(radios, targetDiv) {
-      radios.forEach(radio => {
-        radio.addEventListener('change', () => {
-          if (radio.checked && radio.value === 'ja') {
-            targetDiv.classList.remove('hidden');
-          } else if (radio.checked && radio.value === 'nee') {
-            targetDiv.classList.add('hidden');
-          }
-        });
-      });
-    }
-
-    toggleVisibility(spelRadios, gameDiv);
-    toggleVisibility(bbqRadios, bbqDiv);
-
-    // Validatie bij verzenden
-    form.addEventListener('submit', (e) => {
-      let valid = true;
-      let errors = [];
-
-      // Check of speldeel actief is
-      if (!gameDiv.classList.contains('hidden')) {
-        const players = [
-          form.player_1.value.trim(),
-          form.player_2.value.trim(),
-          form.player_3.value.trim(),
-          form.player_4.value.trim(),
-          form.player_5.value.trim(),
-          form.player_6.value.trim()
-        ];
-        const atLeastOnePlayer = players.some(name => name.length > 0);
-        if (!atLeastOnePlayer) {
-          valid = false;
-          errors.push("Vul minstens één speler in voor het spel.");
-        }
-      }
-
-      // Check of BBQ-deel actief is
-      if (!bbqDiv.classList.contains('hidden')) {
-        const vlees = parseInt(form.bbq_vlees.value || 0, 10);
-        const vega = parseInt(form.bbq_vega.value || 0, 10);
-        const kindermenu_bbq = parseInt(form.kindermenu_bbq.value || 0, 10);
-        const pannenkoeken = parseInt(form.pannenkoeken.value || 0, 10);
-        const total = vlees + vega + kindermenu_bbq+ pannenkoeken;
-        if (total < 1) {
-          valid = false;
-          errors.push("Selecteer minstens één BBQ-optie.");
-        }
-      }
-
-      // Stop verzenden als ongeldig
-      if (!valid) {
-        e.preventDefault();
-        alert(errors.join('\n'));
-      }
-    });
-  });
-</script>

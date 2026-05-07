@@ -1,0 +1,247 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+    title="SCOREBORD — Operation Black Belt"
+    description="Live scorebord van Operation Black Belt — Judovereniging De Uitkomst">
+
+    <main class="px-4 max-w-4xl mx-auto w-full py-12">
+
+        <p class="text-t-text-dim text-xs tracking-[0.3em] mb-3">// LIVE SCOREBORD — OPERATION BLACK BELT</p>
+        <h1 class="text-4xl md:text-5xl font-black text-t-green mb-2">SCOREBORD</h1>
+
+        <!-- Status bar -->
+        <div class="flex items-center gap-3 mb-10">
+            <span id="status-dot" class="w-2 h-2 rounded-full bg-t-text-dim"></span>
+            <span id="status-label" class="text-t-text-dim text-xs tracking-widest">WACHT OP SPELLEIDER</span>
+        </div>
+
+        <!-- Score display -->
+        <div class="grid grid-cols-2 gap-6 mb-10">
+            <!-- Smokkelaars -->
+            <div class="terminal-card p-6 md:p-10 rounded text-center">
+                <p class="text-t-green text-xs tracking-[0.2em] mb-4">SMOKKELTEAM</p>
+                <p id="score-smokkel" class="text-6xl md:text-8xl font-black text-t-green glow-green tabular-nums">0</p>
+                <p class="text-t-text-dim text-xs mt-4 tracking-widest">PUNTEN</p>
+            </div>
+            <!-- Politie -->
+            <div class="terminal-card-red p-6 md:p-10 rounded text-center">
+                <p class="text-t-red text-xs tracking-[0.2em] mb-4">POLITIE</p>
+                <p id="score-politie" class="text-6xl md:text-8xl font-black text-t-red glow-red tabular-nums">0</p>
+                <p class="text-t-text-dim text-xs mt-4 tracking-widest">PUNTEN</p>
+            </div>
+        </div>
+
+        <!-- Ronde info -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+            <div class="terminal-card p-4 rounded text-center">
+                <p class="text-t-text-dim text-xs tracking-widest mb-1">RONDE</p>
+                <p id="ronde" class="text-t-green text-2xl font-black">—</p>
+            </div>
+            <div class="terminal-card p-4 rounded text-center">
+                <p class="text-t-text-dim text-xs tracking-widest mb-1">SMOKKELWAAR IN OMLOOP</p>
+                <p id="items" class="text-t-amber text-2xl font-black">—</p>
+            </div>
+            <div class="terminal-card p-4 rounded text-center">
+                <p class="text-t-text-dim text-xs tracking-widest mb-1">MULTIPLIER</p>
+                <p id="multiplier" class="text-t-amber text-2xl font-black">x1</p>
+            </div>
+        </div>
+
+        <!-- Log -->
+        <div class="terminal-card p-4 rounded mb-8">
+            <p class="text-t-text-dim text-xs tracking-widest mb-3">&gt; ACTIVITEIT LOG_</p>
+            <div id="log" class="space-y-1 text-xs font-mono max-h-40 overflow-y-auto">
+                <p class="text-t-text-dim">// Wacht op verbinding met spelleider...</p>
+            </div>
+        </div>
+
+        <!-- Admin panel (hidden) -->
+        <div id="admin-panel" class="hidden terminal-card border-t-amber/30 p-6 rounded">
+            <p class="text-t-amber text-xs tracking-widest mb-4">&gt; SPELLEIDER PANEEL — BEHEER MODUS_</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                <div>
+                    <label class="text-t-green text-xs tracking-widest block mb-1">SMOKKELTEAM SCORE</label>
+                    <input id="input-smokkel" type="number" min="0" value="0"
+                        class="w-full bg-t-bg border border-t-border text-t-green rounded px-3 py-2 text-sm focus:outline-none focus:border-t-green" />
+                </div>
+                <div>
+                    <label class="text-t-red text-xs tracking-widest block mb-1">POLITIE SCORE</label>
+                    <input id="input-politie" type="number" min="0" value="0"
+                        class="w-full bg-t-bg border border-t-border text-t-red rounded px-3 py-2 text-sm focus:outline-none focus:border-t-green" />
+                </div>
+                <div>
+                    <label class="text-t-text-dim text-xs tracking-widest block mb-1">RONDE</label>
+                    <input id="input-ronde" type="number" min="1" value="1"
+                        class="w-full bg-t-bg border border-t-border text-t-green rounded px-3 py-2 text-sm focus:outline-none focus:border-t-green" />
+                </div>
+                <div>
+                    <label class="text-t-amber text-xs tracking-widest block mb-1">MULTIPLIER</label>
+                    <select id="input-multiplier"
+                        class="w-full bg-t-bg border border-t-border text-t-amber rounded px-3 py-2 text-sm focus:outline-none focus:border-t-green">
+                        <option value="1">x1 — Normaal</option>
+                        <option value="2">x2 — HIGH VALUE</option>
+                        <option value="3">x3 — JACKPOT</option>
+                    </select>
+                </div>
+                <div class="md:col-span-2">
+                    <label class="text-t-text-dim text-xs tracking-widest block mb-1">LOGBERICHT</label>
+                    <input id="input-log" type="text" placeholder="bijv. Ronde 2 gestart — HIGH VALUE actief"
+                        class="w-full bg-t-bg border border-t-border text-t-green rounded px-3 py-2 text-sm focus:outline-none focus:border-t-green" />
+                </div>
+            </div>
+            <div class="flex gap-3 flex-wrap">
+                <button id="btn-update"
+                    class="bg-t-green text-t-bg font-bold py-2 px-6 rounded text-xs tracking-widest hover:bg-t-green-dim transition-colors">
+                    SCORE BIJWERKEN
+                </button>
+                <button id="btn-game-start"
+                    class="border border-t-green text-t-green font-bold py-2 px-6 rounded text-xs tracking-widest hover:bg-t-green-muted transition-colors">
+                    SPEL STARTEN
+                </button>
+                <button id="btn-game-stop"
+                    class="border border-t-red text-t-red font-bold py-2 px-6 rounded text-xs tracking-widest hover:bg-red-950/20 transition-colors">
+                    SPEL STOPPEN
+                </button>
+                <button id="btn-reset"
+                    class="border border-t-text-dim text-t-text-dim font-bold py-2 px-6 rounded text-xs tracking-widest hover:border-t-red hover:text-t-red transition-colors">
+                    RESET
+                </button>
+            </div>
+        </div>
+
+        <p class="text-t-text-dim text-xs text-center mt-6 tracking-widest">
+            Druk op <kbd class="bg-t-surface border border-t-border px-1.5 py-0.5 rounded text-t-green">~</kbd> voor spelleider-toegang
+        </p>
+
+    </main>
+
+    <Footer />
+
+</Layout>
+
+<script>
+    // State
+    const STATE_KEY = 'smokkel_scorebord_v1';
+
+    function getState() {
+        try {
+            return JSON.parse(localStorage.getItem(STATE_KEY) || 'null') || {
+                smokkel: 0,
+                politie: 0,
+                ronde: 1,
+                multiplier: 1,
+                active: false,
+                log: [],
+            };
+        } catch { return { smokkel: 0, politie: 0, ronde: 1, multiplier: 1, active: false, log: [] }; }
+    }
+
+    function saveState(state: any) {
+        localStorage.setItem(STATE_KEY, JSON.stringify(state));
+    }
+
+    function addLog(state: any, msg: string) {
+        const time = new Date().toLocaleTimeString('nl-NL', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+        state.log = [`[${time}] ${msg}`, ...state.log.slice(0, 29)];
+    }
+
+    function render(state: any) {
+        (document.getElementById('score-smokkel') as HTMLElement).textContent = String(state.smokkel);
+        (document.getElementById('score-politie') as HTMLElement).textContent = String(state.politie);
+        (document.getElementById('ronde') as HTMLElement).textContent = `${state.ronde}`;
+        (document.getElementById('multiplier') as HTMLElement).textContent = `x${state.multiplier}`;
+        (document.getElementById('items') as HTMLElement).textContent = '—';
+
+        const dot = document.getElementById('status-dot') as HTMLElement;
+        const label = document.getElementById('status-label') as HTMLElement;
+        if (state.active) {
+            dot.className = 'w-2 h-2 rounded-full bg-t-green blink';
+            label.textContent = 'LIVE — SPEL ACTIEF';
+            label.className = 'text-t-green text-xs tracking-widest';
+        } else {
+            dot.className = 'w-2 h-2 rounded-full bg-t-text-dim';
+            label.textContent = 'SPEL INACTIEF';
+            label.className = 'text-t-text-dim text-xs tracking-widest';
+        }
+
+        const logEl = document.getElementById('log') as HTMLElement;
+        if (state.log.length > 0) {
+            logEl.innerHTML = state.log
+                .map((l: string) => `<p class="text-t-text">${l}</p>`)
+                .join('');
+        }
+
+        // Sync admin inputs
+        const is = document.getElementById('input-smokkel') as HTMLInputElement;
+        const ip = document.getElementById('input-politie') as HTMLInputElement;
+        const ir = document.getElementById('input-ronde') as HTMLInputElement;
+        const im = document.getElementById('input-multiplier') as HTMLSelectElement;
+        if (is) is.value = String(state.smokkel);
+        if (ip) ip.value = String(state.politie);
+        if (ir) ir.value = String(state.ronde);
+        if (im) im.value = String(state.multiplier);
+    }
+
+    // Auto-refresh every 15 seconds for viewers
+    setInterval(() => {
+        render(getState());
+    }, 15000);
+
+    // Initial render
+    render(getState());
+
+    // Admin panel toggle with ~
+    let adminVisible = false;
+    document.addEventListener('keydown', (e) => {
+        if (e.key === '~' || e.key === '`') {
+            adminVisible = !adminVisible;
+            const panel = document.getElementById('admin-panel') as HTMLElement;
+            panel.classList.toggle('hidden', !adminVisible);
+        }
+    });
+
+    // Update button
+    document.getElementById('btn-update')?.addEventListener('click', () => {
+        const state = getState();
+        state.smokkel = parseInt((document.getElementById('input-smokkel') as HTMLInputElement).value) || 0;
+        state.politie = parseInt((document.getElementById('input-politie') as HTMLInputElement).value) || 0;
+        state.ronde = parseInt((document.getElementById('input-ronde') as HTMLInputElement).value) || 1;
+        state.multiplier = parseInt((document.getElementById('input-multiplier') as HTMLSelectElement).value) || 1;
+        const logMsg = (document.getElementById('input-log') as HTMLInputElement).value.trim();
+        if (logMsg) {
+            addLog(state, logMsg);
+            (document.getElementById('input-log') as HTMLInputElement).value = '';
+        }
+        addLog(state, `Score bijgewerkt — Smokkel: ${state.smokkel} | Politie: ${state.politie}`);
+        saveState(state);
+        render(state);
+    });
+
+    document.getElementById('btn-game-start')?.addEventListener('click', () => {
+        const state = getState();
+        state.active = true;
+        addLog(state, `SPEL GESTART — Ronde ${state.ronde}`);
+        saveState(state);
+        render(state);
+    });
+
+    document.getElementById('btn-game-stop')?.addEventListener('click', () => {
+        const state = getState();
+        state.active = false;
+        addLog(state, 'SPEL GESTOPT door spelleider');
+        saveState(state);
+        render(state);
+    });
+
+    document.getElementById('btn-reset')?.addEventListener('click', () => {
+        if (confirm('Score resetten naar nul?')) {
+            const state = { smokkel: 0, politie: 0, ronde: 1, multiplier: 1, active: false, log: [] as string[] };
+            addLog(state, 'RESET — Scorebord gewist');
+            saveState(state);
+            render(state);
+        }
+    });
+</script>

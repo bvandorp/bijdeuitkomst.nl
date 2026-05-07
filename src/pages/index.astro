@@ -1,74 +1,275 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Section from '../components/Section.astro';
 import Submission_form from '../components/Submission_form.astro';
 import Footer from '../components/Footer.astro'
 ---
 
-<Layout title="Boeven vs. Jagers - Durf Jij het Aan?"
-description="Zondag 6 juli is het weer zover: ons eindeseizoensfeest! En dit jaar doen we iets gaafs: we gaan buiten het spel Hunting Game spelen!">
-	<main class="px-4">
-		<Section>
-			<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-5 pb-6 lg:pb-10">
-			Boeven vs. Jagers<br/> Durf Jij het Aan? </h1>
-			<p class="text-xl opacity-80 text-pretty max-w-{700px}">Zondag 6 juli is het weer zover: ons eindeseizoensfeest! En dit jaar doen we iets gaafs: we gaan buiten het spel Hunting Game spelen!</p>
-			<p class="mt-10 text-xl opacity-80 text-pretty max-w-{700px}">
-				<span class="text-blue-300 typewriter">Wanneer?</span> Zondag 6 juli 2025
-			</p>
-			<p class="text-xl opacity-80 text-pretty max-w-{700px}">
-				<span class="text-blue-300 typewriter">Waar?</span> Judovereniging De Uitkomst, Sportlaan 21, Anna Paulowna
-			</p>
-			<p class="text-xl opacity-80 text-pretty max-w-{700px}">
-				<span class="text-blue-300 typewriter">Hoe laat?</span> 13:00 tot 16:00 uur + afsluitende BBQ!
-			</p>
-		
-		</Section>
-		<Section id="uitleg">
-			<h2 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-5 pb-6 lg:pb-10">Wat is Hunting Game?</h2>
-			<p class="text-l lg:text-xl opacity-80 text-pretty max-w-{700px}">Tijdens ons eindeseizoensfeest spelen we het interactieve buitenspel Hunting Game!</p>
-			<p class="mt-5 text-l lg:text-xl opacity-80 text-pretty max-w-{700px}">Met je groep ga je op pad door Anna Paulowna, gewapend met een smartphone en de gratis app. Jullie zijn óf jagers, óf boeven — en elke ronde wisselen de rollen.</p>
+<Layout
+    title="OPERATION BLACK BELT — Judovereniging De Uitkomst"
+    description="Het eindeseizoensfeest 2026 van Judovereniging De Uitkomst. Een real-life smokkelgame in Anna Paulowna — geen telefoons, wél judo.">
 
-			<h3 class="mt-10 text-xl lg:text-2xl opacity-80 text-pretty max-w-{700px}">👟 Hoe werkt het?</h3>
-			<ul class="list-disc ml-10">
-				<li class="mt-5 text-l lg:text-xl opacity-80 text-pretty max-w-{700px}">Boeven proberen uit handen te blijven van de jagers.</li>
-				<li class="mt-5 text-l lg:text-xl opacity-80 text-pretty max-w-{700px}">Jagers zien via de app (met vertraging) waar de boeven zijn en proberen ze in te halen en te “vangen” via de app.</li>
-				<li class="mt-5 text-l lg:text-xl opacity-80 text-pretty max-w-{700px}">Gevangen boeven sluiten zich direct aan bij de jagers en helpen mee met vangen!</li>
-				<li class="mt-5 text-l lg:text-xl opacity-80 text-pretty max-w-{700px}">Elke ronde eindigt als alle boeven zijn gepakt, of als de tijd om is.</li>
-				<li class="mt-5 text-l lg:text-xl opacity-80 text-pretty max-w-{700px}">Na afloop is er een prijsuitreiking én iets lekkers.</li>
-			</ul>
-			
-			<h3 class="mt-10 text-xl lg:text-2xl opacity-80 text-pretty max-w-{700px}">📱 Wat heb je nodig?</h3>
-			<ul class="list-disc ml-10">
-				<li class="mt-5 text-l lg:text-xl opacity-80 text-pretty max-w-{700px}">Een smartphone met de gratis Hunting Game-app (iOS/Android)</li>
-				<li class="mt-5 text-l lg:text-xl opacity-80 text-pretty max-w-{700px}">Volle batterij</li>
-				<li class="mt-5 text-l lg:text-xl opacity-80 text-pretty max-w-{700px}">Comfortabele schoenen 😉</li>
-			</ul>
-			
-			<h3 class="mt-10 text-xl lg:text-2xl opacity-80 text-pretty max-w-{700px}">📏 Spelregels in het kort:</h3>
-			
-			<ul class="list-disc ml-10">
-				<li class="mt-5 text-l lg:text-xl opacity-80 text-pretty max-w-{700px}">Blijf altijd binnen het speelgebied (in Anna Paulowna)</li>
-				<li class="mt-5 text-l lg:text-xl opacity-80 text-pretty max-w-{700px}">Volg de verkeersregels</li>
-				<li class="mt-5 text-l lg:text-xl opacity-80 text-pretty max-w-{700px}">Blijf met je groep bij elkaar – niet opsplitsen</li>
-				<li class="mt-5 text-l lg:text-xl opacity-80 text-pretty max-w-{700px}">Geen fysiek contact, alleen “vangen” via de app</li>
-			</ul>
-			
-			<p class="mt-5 text-l lg:text-xl opacity-80 text-pretty max-w-{700px}">Het spel is geschikt voor kinderen én volwassenen. Er zit altijd een volwassene in elk team, en er is EHBO ter plaatse. We zorgen voor veiligheid, spanning én vooral veel plezier!</p>
-			</Section>
+    <main class="px-4 max-w-4xl mx-auto w-full">
 
-			<Section id="bbq">
-			<h2 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-5 pb-6 lg:pb-10">🔥 Traditionele BBQ als afsluiter!</h2>
-			<p class="mt-5 text-l lg:text-xl opacity-80 text-pretty max-w-{700px}">Na alle actie in het spel sluiten we het seizoen zoals elk jaar af met onze traditionele BBQ bij de dojo. We steken de kolen aan voor een gezellige en smaakvolle afsluiting, met heerlijke gerechten van de grill voor jong en oud.</p>
+        <!-- HERO -->
+        <section id="top" class="py-24 md:py-32">
+            <p class="text-t-text-dim text-xs tracking-[0.3em] mb-6">// JUDOVERENIGING DE UITKOMST — EINDESEIZOENSFEEST 2026</p>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight text-t-green glitch leading-none mb-4">
+                OPERATION<br/>BLACK BELT
+            </h1>
+            <p class="text-t-text-dim text-sm tracking-widest mb-10">
+                <span class="text-t-amber">CLASSIFICATIE:</span> TOP SECRET &nbsp;|&nbsp;
+                <span class="text-t-amber">STATUS:</span> ACTIEF &nbsp;|&nbsp;
+                <span class="text-t-amber blink">▮</span>
+            </p>
 
-<p class="mt-5 text-l lg:text-xl opacity-80 text-pretty max-w-{700px}">Voor de kleine eters (of de zoetekauwen 😋) zijn er natuurlijk ook versgebakken pannenkoeken!</p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-10 max-w-2xl">
+                <div class="terminal-card p-4 rounded reveal-up">
+                    <p class="text-t-text-dim text-xs tracking-widest mb-1">WANNEER</p>
+                    <p class="text-t-green text-sm font-bold">Zondag 6 juli 2025</p>
+                    <p class="text-t-text text-xs">13:00 – 16:00 uur</p>
+                </div>
+                <div class="terminal-card p-4 rounded reveal-up reveal-delay-1">
+                    <p class="text-t-text-dim text-xs tracking-widest mb-1">LOCATIE</p>
+                    <p class="text-t-green text-sm font-bold">Anna Paulowna</p>
+                    <p class="text-t-text text-xs">Afgebakend speelgebied</p>
+                </div>
+                <div class="terminal-card p-4 rounded reveal-up reveal-delay-2">
+                    <p class="text-t-text-dim text-xs tracking-widest mb-1">TECHNOLOGIE</p>
+                    <p class="text-t-green text-sm font-bold">GEEN TELEFOON</p>
+                    <p class="text-t-text text-xs">Puur real-life</p>
+                </div>
+            </div>
 
-<p class="mt-5 text-l lg:text-xl opacity-80 text-pretty max-w-{700px}">👉 Wil je niet meedoen met het spel, maar wél aanschuiven bij de BBQ? Geen probleem! Je kunt je ook alleen aanmelden voor de BBQ. Iedereen is welkom – ook ouders, broertjes, zusjes, buren of vriendjes.</p>
-			</p>
-			</Section>
-		<Section id="aanmelden">
-			<h2 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-5 pb-6 lg:pb-10">Aanmelden</h2>
-			<Submission_form />
-		</Section>
-		<Footer/>
-	</main>
+            <div class="mt-8 map-grid-overlay rounded p-4 max-w-2xl floating">
+                <p class="text-t-text-dim text-[11px] tracking-[0.2em] mb-2">// SPEELGEBIED OVERLAY — ANNA PAULOWNA</p>
+                <div class="grid grid-cols-3 gap-2 text-[11px] tracking-wider text-t-green/90">
+                    <div class="border border-t-border rounded px-2 py-1">SECTOR A01</div>
+                    <div class="border border-t-border rounded px-2 py-1">SECTOR C13</div>
+                    <div class="border border-t-border rounded px-2 py-1">SECTOR F07</div>
+                    <div class="border border-t-border rounded px-2 py-1">CHECKPOINT UKEMI</div>
+                    <div class="border border-t-border rounded px-2 py-1">DROPOFF [CENTRAAL]</div>
+                    <div class="border border-t-border rounded px-2 py-1 text-t-red">PATROL RISK++</div>
+                </div>
+            </div>
+
+            <div class="mt-10 flex flex-wrap gap-4">
+                <a href="#aanmelden"
+                    class="bg-t-green text-t-bg font-black py-3 px-8 rounded text-sm tracking-widest hover:bg-t-green-dim transition-colors glow-green">
+                    &gt; AANMELDEN_
+                </a>
+                <a href="#spelregels"
+                    class="border border-t-green text-t-green font-bold py-3 px-8 rounded text-sm tracking-widest hover:bg-t-green-muted transition-colors">
+                    SPELREGELS
+                </a>
+            </div>
+        </section>
+
+        <hr class="terminal-divider" />
+
+        <!-- GEZOCHT -->
+        <section id="gezocht" class="py-12">
+            <p class="text-t-text-dim text-xs tracking-[0.3em] mb-3">// GEZOCHT DOSSIERS</p>
+            <h2 class="text-2xl md:text-3xl font-black text-t-green mb-6">HIGH VALUE TARGETS</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <article class="wanted-card rounded p-4 reveal-up">
+                    <p class="text-t-red text-xs tracking-widest mb-2">WANTED // SMOKKELWAAR TYPE X</p>
+                    <p class="text-t-text text-sm mb-3">Compacte lading met hoge puntenwaarde, schaars in omloop.</p>
+                    <p class="text-t-amber text-xs font-bold tracking-widest">WAARDE: 5 PUNTEN</p>
+                </article>
+                <article class="wanted-card rounded p-4 reveal-up reveal-delay-1">
+                    <p class="text-t-red text-xs tracking-widest mb-2">WANTED // BONDGENOOT CHECKPOINT</p>
+                    <p class="text-t-text text-sm mb-3">Team-opdracht met balans en samenwerking voor bonusroute.</p>
+                    <p class="text-t-amber text-xs font-bold tracking-widest">BONUS: +2 PUNTEN</p>
+                </article>
+                <article class="wanted-card rounded p-4 reveal-up reveal-delay-2">
+                    <p class="text-t-red text-xs tracking-widest mb-2">WANTED // HIGH VALUE WINDOW</p>
+                    <p class="text-t-text text-sm mb-3">Korte periode waarin confiscatie dubbel telt voor politie.</p>
+                    <p class="text-t-amber text-xs font-bold tracking-widest">MULTIPLIER: x2</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- MISSION BRIEFING -->
+        <section id="missie" class="py-20">
+            <p class="text-t-text-dim text-xs tracking-[0.3em] mb-3">// MISSION BRIEFING</p>
+            <h2 class="text-3xl md:text-4xl font-black text-t-green mb-8">WAT IS DE OPERATIE?</h2>
+
+            <div class="space-y-4 text-t-text text-sm leading-relaxed max-w-2xl">
+                <p>
+                    Dit jaar spelen we een <span class="text-t-green font-bold">real-life smokkelgame</span> door Anna Paulowna — geïnspireerd op Jachtseizoen, maar zonder telefoons. Puur fysiek, tactisch en spannend.
+                </p>
+                <p>
+                    Smokkelteams proberen <span class="text-t-green">smokkelwaar</span> (fysieke objecten: lintjes, kaartjes, pakketjes) op te halen en veilig af te leveren bij het <span class="text-t-green">centrale eindpunt</span>. De politie probeert dit te voorkomen.
+                </p>
+                <p>
+                    Onderweg kom je <span class="text-t-amber">checkpoints</span> tegen met korte judo-opdrachten. Balans, ukemi, samenwerking — de judoka in jou komt van pas.
+                </p>
+            </div>
+
+            <div class="mt-8 terminal-card p-4 rounded max-w-2xl">
+                <p class="text-t-text-dim text-xs tracking-widest mb-2">SPELLEIDER TRANSMISSIE</p>
+                <p class="text-t-green text-sm">"Elke seconde telt. Kies je route. Vertrouw je team. Smokkel slim."</p>
+            </div>
+        </section>
+
+        <hr class="terminal-divider" />
+
+        <!-- TEAMS -->
+        <section id="teams" class="py-20">
+            <p class="text-t-text-dim text-xs tracking-[0.3em] mb-3">// TEAMVERDELING</p>
+            <h2 class="text-3xl md:text-4xl font-black text-t-green mb-8">KIES JE KANT</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Smokkelaars -->
+                <div class="terminal-card p-6 rounded">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-2xl">📦</span>
+                        <div>
+                            <h3 class="text-t-green text-lg font-black tracking-widest">SMOKKELTEAM</h3>
+                            <p class="text-t-text-dim text-xs">~75% van de spelers</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-2 text-t-text text-sm">
+                        <li class="flex gap-2"><span class="text-t-green">+</span> Haal smokkelwaar op en lever het af</li>
+                        <li class="flex gap-2"><span class="text-t-green">+</span> Kies zelf routes en strategie</li>
+                        <li class="flex gap-2"><span class="text-t-green">+</span> Kleine groepjes voor meer wendbaarheid</li>
+                        <li class="flex gap-2"><span class="text-t-green">+</span> Bij vangst: meteen weer verder spelen</li>
+                        <li class="flex gap-2"><span class="text-t-amber">!</span> Checkpoints met judo-opdrachten onderweg</li>
+                    </ul>
+                </div>
+
+                <!-- Politie -->
+                <div class="terminal-card-red p-6 rounded">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-2xl">🚔</span>
+                        <div>
+                            <h3 class="text-t-red text-lg font-black tracking-widest">POLITIE</h3>
+                            <p class="text-t-text-dim text-xs">~25% van de spelers</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-2 text-t-text text-sm">
+                        <li class="flex gap-2"><span class="text-t-red">+</span> Patrouilleer door het speelgebied</li>
+                        <li class="flex gap-2"><span class="text-t-red">+</span> Onderschep smokkelteams</li>
+                        <li class="flex gap-2"><span class="text-t-red">+</span> Confisqueer smokkelwaar voor punten</li>
+                        <li class="flex gap-2"><span class="text-t-amber">!</span> Niet campen bij het eindpunt</li>
+                        <li class="flex gap-2"><span class="text-t-amber">!</span> Vangen = 2 sec. beide handen op schouders</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <hr class="terminal-divider" />
+
+        <!-- SPELREGELS -->
+        <section id="spelregels" class="py-20">
+            <p class="text-t-text-dim text-xs tracking-[0.3em] mb-3">// SPELPROTOCOL</p>
+            <h2 class="text-3xl md:text-4xl font-black text-t-green mb-8">SPELREGELS</h2>
+
+            <div class="space-y-3 max-w-2xl">
+                {[
+                    { code: '01', rule: 'Blijf binnen het afgebakende speelgebied van Anna Paulowna' },
+                    { code: '02', rule: 'Volg altijd de verkeersregels — ook tijdens het spel' },
+                    { code: '03', rule: 'Vangen = politie legt 2 seconden beide handen op de schouders van de smokkelaar' },
+                    { code: '04', rule: 'Bij vangst wordt alle smokkelwaar ingeleverd bij de politie' },
+                    { code: '05', rule: 'Na vangst mogen smokkelaars direct weer verder spelen' },
+                    { code: '06', rule: 'Politie mag NIET camperen bij het eindpunt' },
+                    { code: '07', rule: 'Er blijft continu nieuwe smokkelwaar beschikbaar — het spel stopt nooit' },
+                    { code: '08', rule: 'Er zit altijd een volwassene in elk team. EHBO is aanwezig.' },
+                ].map(({ code, rule }) => (
+                    <div class="flex gap-4 items-start terminal-card px-4 py-3 rounded">
+                        <span class="text-t-green text-xs font-bold shrink-0 pt-0.5">[{code}]</span>
+                        <p class="text-t-text text-sm">{rule}</p>
+                    </div>
+                ))}
+            </div>
+        </section>
+
+        <hr class="terminal-divider" />
+
+        <!-- PUNTENSYSTEEM -->
+        <section id="punten" class="py-20">
+            <p class="text-t-text-dim text-xs tracking-[0.3em] mb-3">// SCORING PROTOCOL</p>
+            <h2 class="text-3xl md:text-4xl font-black text-t-green mb-8">PUNTENSYSTEEM</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl">
+                <div class="terminal-card p-6 rounded">
+                    <h3 class="text-t-green text-sm font-black tracking-widest mb-4">BANDKLEUR = PUNTENWAARDE</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center border-b border-t-border pb-2">
+                            <span class="text-t-text text-sm flex items-center gap-2"><span class="inline-block w-3 h-3 rounded-full bg-white border border-gray-300"></span>Witte band</span>
+                            <span class="text-t-green font-bold text-sm">+1 pt</span>
+                        </div>
+                        <div class="flex justify-between items-center border-b border-t-border pb-2">
+                            <span class="text-t-text text-sm flex items-center gap-2"><span class="inline-block w-3 h-3 rounded-full bg-yellow-300"></span>Gele band</span>
+                            <span class="text-t-green font-bold text-sm">+2 pt</span>
+                        </div>
+                        <div class="flex justify-between items-center border-b border-t-border pb-2">
+                            <span class="text-t-text text-sm flex items-center gap-2"><span class="inline-block w-3 h-3 rounded-full bg-orange-400"></span>Oranje band</span>
+                            <span class="text-t-green font-bold text-sm">+3 pt</span>
+                        </div>
+                        <div class="flex justify-between items-center border-b border-t-border pb-2">
+                            <span class="text-t-text text-sm flex items-center gap-2"><span class="inline-block w-3 h-3 rounded-full bg-green-500"></span>Groene band</span>
+                            <span class="text-t-green font-bold text-sm">+4 pt</span>
+                        </div>
+                        <div class="flex justify-between items-center border-b border-t-border pb-2">
+                            <span class="text-t-text text-sm flex items-center gap-2"><span class="inline-block w-3 h-3 rounded-full bg-blue-500"></span>Blauwe band</span>
+                            <span class="text-t-green font-bold text-sm">+5 pt</span>
+                        </div>
+                        <div class="flex justify-between items-center border-b border-t-border pb-2">
+                            <span class="text-t-text text-sm flex items-center gap-2"><span class="inline-block w-3 h-3 rounded-full bg-amber-700"></span>Bruine band</span>
+                            <span class="text-t-green font-bold text-sm">+6 pt</span>
+                        </div>
+                        <div class="flex justify-between items-center border-b border-t-border pb-2">
+                            <span class="text-t-text text-sm flex items-center gap-2"><span class="inline-block w-3 h-3 rounded-full bg-black border border-gray-500"></span>Zwarte band</span>
+                            <span class="text-t-green font-bold text-sm">+8 pt</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="terminal-card-red p-6 rounded">
+                    <h3 class="text-t-red text-sm font-black tracking-widest mb-4">POLITIE / BEWAKERS</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center border-b border-t-border pb-2">
+                            <span class="text-t-text text-sm">Geconfisqueerde bandkleur</span>
+                            <span class="text-t-red font-bold text-sm">zelfde waarde</span>
+                        </div>
+                        <div class="flex justify-between items-center border-b border-t-border pb-2">
+                            <span class="text-t-text text-sm">Voorbeeld: zwarte band-item</span>
+                            <span class="text-t-red font-bold text-sm">+8 pt</span>
+                        </div>
+                        <div class="flex justify-between items-center border-b border-t-border pb-2">
+                            <span class="text-t-text text-sm">High Value ronde actief</span>
+                            <span class="text-t-amber font-bold text-sm">x2</span>
+                        </div>
+                        <div class="flex justify-between items-center border-b border-t-border pb-2">
+                            <span class="text-t-text text-sm">Checkpoint bonus</span>
+                            <span class="text-t-amber font-bold text-sm">+1 / +2</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 max-w-2xl terminal-card p-4 rounded">
+                <p class="text-t-text-dim text-xs tracking-widest mb-1">TACTISCH VOORDEEL</p>
+                <p class="text-t-text text-sm">
+                    Iedere smokkelwaar krijgt een bandkleur. <span class="text-t-amber font-bold">Hoe hoger de band, hoe meer punten</span>. Hierdoor loont risico nemen: zwart is zeldzaam, maar levert de hoogste score op.
+                </p>
+            </div>
+        </section>
+
+        <hr class="terminal-divider" />
+
+        <!-- AANMELDEN -->
+        <section id="aanmelden" class="py-20">
+            <p class="text-t-text-dim text-xs tracking-[0.3em] mb-3">// TOEGANGSFORMULIER</p>
+            <h2 class="text-3xl md:text-4xl font-black text-t-green mb-2">AANMELDEN</h2>
+            <p class="text-t-text text-sm mb-8">Registreer je team voor Operation Black Belt. De spelleider verdeelt de teams definitief op de dag zelf.</p>
+            <Submission_form />
+        </section>
+
+    </main>
+    <Footer />
+
 </Layout>
+
+

@@ -1,36 +1,46 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Section from '../components/Section.astro';
-import Submission_form from '../components/Submission_form.astro';
 import Footer from '../components/Footer.astro'
 ---
 
-<Layout title="Boeven vs. Jagers - Durf Jij het Aan?"
-description="Zondag 6 juli is het weer zover: ons eindeseizoensfeest! En dit jaar doen we iets gaafs: we gaan buiten het spel Hunting Game spelen!">
-	<main class="px-4">
-		<Section>
-			<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-5 pb-6 lg:pb-10">
-			Je bent aangemeld!</h1>
-			<p class="text-xl opacity-80 text-pretty max-w-{700px}">
-                We hebben je aanmelding ontvangen en jij bent erbij!<br/>
-                We zien je graag verschijnen
-            </p>
-            
-            <h3 class="mt-10 text-xl lg:text-2xl opacity-80 text-pretty max-w-{700px}">Alle info nog even op een rijtje</h3>
-            <p class="mt-2 text-xl opacity-80 text-pretty max-w-{700px}">
-				<span class="text-blue-300 typewriter">Wanneer?</span> Zondag 6 juli 2025
-			</p>
-			<p class="text-xl opacity-80 text-pretty max-w-{700px}">
-				<span class="text-blue-300 typewriter">Waar?</span> Judovereniging De Uitkomst, Sportlaan 21, Anna Paulowna
-			</p>
-			<p class="text-xl opacity-80 text-pretty max-w-{700px}">
-				<span class="text-blue-300 typewriter">Hoe laat?</span> 13:00 tot 16:00 uur + afsluitende BBQ!
-			</p>
-		
-			
-		</Section>
-		
-		<Footer/>
-	</main>
-    
+<Layout
+    title="AANMELDING ONTVANGEN — Operation Black Belt"
+    description="Je aanmelding voor Operation Black Belt is ontvangen.">
+    <main class="px-4 max-w-4xl mx-auto w-full py-24">
+
+        <p class="text-t-text-dim text-xs tracking-[0.3em] mb-3">// TRANSMISSIE ONTVANGEN</p>
+        <h1 class="text-4xl md:text-5xl font-black text-t-green glow-green mb-6">AANMELDING<br/>BEVESTIGD</h1>
+
+        <div class="terminal-card p-6 rounded max-w-2xl mb-8">
+            <p class="text-t-text-dim text-xs tracking-widest mb-3">&gt; STATUSRAPPORT_</p>
+            <p class="text-t-green text-sm mb-4">Je aanmelding is ontvangen en verwerkt. De spelleider verdeelt de teams definitief op de dag zelf.</p>
+            <p class="text-t-text text-sm">Wij zien je graag verschijnen bij:</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mb-10">
+            <div class="terminal-card p-4 rounded">
+                <p class="text-t-text-dim text-xs tracking-widest mb-1">WANNEER</p>
+                <p class="text-t-green text-sm font-bold">Zondag 6 juli 2025</p>
+                <p class="text-t-text text-xs">13:00 – 16:00 uur</p>
+            </div>
+            <div class="terminal-card p-4 rounded">
+                <p class="text-t-text-dim text-xs tracking-widest mb-1">LOCATIE</p>
+                <p class="text-t-green text-sm font-bold">Anna Paulowna</p>
+                <p class="text-t-text text-xs">Sportlaan 21</p>
+            </div>
+            <div class="terminal-card p-4 rounded">
+                <p class="text-t-text-dim text-xs tracking-widest mb-1">MEENEMEN</p>
+                <p class="text-t-green text-sm font-bold">Geen telefoon</p>
+                <p class="text-t-text text-xs">Comfortabele schoenen</p>
+            </div>
+        </div>
+
+        <a href="/"
+            class="inline-block border border-t-green text-t-green font-bold py-3 px-8 rounded text-sm tracking-widest hover:bg-t-green-muted transition-colors">
+            &larr; TERUG NAAR HOME
+        </a>
+
+    </main>
+    <Footer />
 </Layout>
+

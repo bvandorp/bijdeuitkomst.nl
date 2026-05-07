@@ -1,2 +1,5 @@
 /// <reference path="../.astro/types.d.ts" />
 /// <reference types="astro/client" />
+
+declare module '*.css';
+declare module '@fontsource-variable/source-code-pro';

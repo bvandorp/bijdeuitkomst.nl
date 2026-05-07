@@ -1,17 +1,18 @@
 ---
 import Header from '../components/Header.astro';
 import '@fontsource-variable/source-code-pro';
-import '@fontsource/special-elite';
+import '../styles/global.css';
+
 interface Props {
     title: string;
-	description: string;
+    description: string;
 }
 
 const { description, title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="nl">
     <head>
         <meta charset="UTF-8" />
         <meta name="description" content={description} />
@@ -20,59 +21,8 @@ const { description, title } = Astro.props;
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
     </head>
-
     <body>
-        
-        <div class="background"></div>
-    <Header />
-    <slot /> 
+        <Header />
+        <slot />
     </body>
 </html>
-
-<style is:global>
-    @import "flowbite/src/themes/default";
-    @plugin "flowbite/plugin";
-    @source "../../node_modules/flowbite";
-
-    :root {
-        color-scheme: dark;
-    }
-    html {
-        font-family: 'Source Code Pro Variable', monospace;
-        scroll-behavior: smooth;
-        
-    }
-    h1, h2, h3, h4{
-        font-family: 'Special Elite', system-ui;
-    }
-    .typewriter{
-        font-family: 'Special Elite', system-ui;
-    }
-    body {
-		
-        background: #171717;
-        color: #fff;
-        display: flex;
-		flex-direction: column;
-        min-height: 100vh;
-        
-    }
-    .background {
-    position: fixed; /* Cambié de absolute a fixed */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -10;
-
-    background: radial-gradient(circle 500px at 50% 200px, #3e3e3e, transparent);
-
-    filter: blur(100px); /* Aplica el desenfoque */
-
-}
-    @media (prefers-reduced-motion: reduce) {
-        html {
-            scroll-behavior: auto;
-        }
-    }
-</style>
